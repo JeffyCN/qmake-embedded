@@ -1,0 +1,17 @@
+Usage:
+
+Firstly, prepare the environments(sysroot) using adb:
+$ ./qmake_embedded.sh ~/sysroot
+Creating ~/sysroot from adb...
+...
+~/sysroot/qmake (for aarch64-linux-gnu) is ready!
+
+Or using rsync:
+$ ./qmake_embedded.sh ~/sysroot 172.16.22.13
+Creating ~/sysroot from 172.16.22.13...
+...
+~/sysroot/qmake (for aarch64-linux-gnu) is ready!
+
+Then you can use the generated qmake wrapper for cross compiling.
+
+For qtcreator, add it in Tools->Options->Kits->Qt Versions->Add.
