@@ -1,0 +1,53 @@
+cat <<EOF > "$QT_CONF"
+[Paths]
+# Target paths (see $QT_INSTALL_PREFIX/$QT_INSTALL_ARCHDATA/qt.conf)
+Sysroot=$ABS_SYSROOT
+SysrootifyPrefix=true
+Prefix=$QT_INSTALL_PREFIX
+ArchData=$QT_INSTALL_ARCHDATA
+Binaries=$QT_INSTALL_BINS
+Data=$QT_INSTALL_DATA
+Documentation=$QT_INSTALL_DOCS
+Examples=$QT_INSTALL_EXAMPLES
+Headers=$QT_INSTALL_HEADERS
+Imports=$QT_INSTALL_IMPORTS
+Libraries=$QT_INSTALL_LIBS
+LibraryExecutables=$QT_INSTALL_LIBEXECS
+Plugins=$QT_INSTALL_PLUGINS
+Qml2Imports=$QT_INSTALL_QML
+Settings=$QT_INSTALL_CONFIGURATION
+Translations=$QT_INSTALL_TRANSLATIONS
+
+# Host paths
+HostPrefix=$QT_HOST_PREFIX
+HostData=$QT_HOST_DATA
+HostBinaries=$QT_HOST_BINS
+HostLibraries=$QT_HOST_LIBS
+
+TargetSpec=devices/$MKSPEC
+
+[EffectivePaths]
+# Use target mkspecs
+HostData=$ABS_SYSROOT$QT_INSTALL_PREFIX/$QT_INSTALL_ARCHDATA
+
+# Dup host paths
+HostPrefix=$QT_HOST_PREFIX
+HostBinaries=$QT_HOST_BINS
+HostLibraries=$QT_HOST_LIBS
+
+# Dup target paths
+Prefix=$QT_INSTALL_PREFIX
+ArchData=$QT_INSTALL_ARCHDATA
+Binaries=$QT_INSTALL_BINS
+Data=$QT_INSTALL_DATA
+Documentation=$QT_INSTALL_DOCS
+Examples=$QT_INSTALL_EXAMPLES
+Headers=$QT_INSTALL_HEADERS
+Imports=$QT_INSTALL_IMPORTS
+Libraries=$QT_INSTALL_LIBS
+LibraryExecutables=$QT_INSTALL_LIBEXECS
+Plugins=$QT_INSTALL_PLUGINS
+Qml2Imports=$QT_INSTALL_QML
+Settings=$QT_INSTALL_CONFIGURATION
+Translations=$QT_INSTALL_TRANSLATIONS
+EOF
