@@ -64,6 +64,9 @@ for d in $DIRS $FILES; do
 	[ -e "$SYSROOT"/$d ] || error_msg "$SYSROOT/$d not found!"
 done
 
+# This breaks linking
+rm -rf "$SYSROOT/usr/lib/gcc/*/*/liblto_plugin.so"
+
 # Add mkspecs
 case $(ls "$SYSROOT"/lib/ld-linux-*) in
 	*aarch64*)
